@@ -1,27 +1,14 @@
-//import { DatabaseSync } from "node:sqlite";
+//sync adapter für sqlite
+import { DatabaseSync } from "node:sqlite";
 
-//const db = new DatabaseSync("2ahwii.db");
-//const stmt = db.prepare("SELECT * FROM students");
-//const rows = stmt.all();
-//console.log(rows);
+//konkreter "handle" für eine spezifische datenbank
+const db = new DatabaseSync("2ahwii.db");
 
-// main.ts
-import { DB } from "https://deno.land/x/sqlite/mod.ts";
+//statement wird zuerst "prepared" und dann "executed"
+let stmt = db.prepare("SELECT * FROM students");
+//hier das execute:
+const rows = stmt.all();
+stmt = db.prepare("insert into students(id, name, birthdate) values (?, ?, ?)");
 
-// Deno-Äquivalent zu: new DatabaseSync("2ahwii.db")
-const db = new DB("2ahwii.db");
-
-
-
-// Beispiel: Einfügen
-db.query("INSERT INTO students (name, age, email) VALUES (32, aa, 2387-23-23)");
-
-// Deno-Äquivalent zu: const rows = stmt.all();
-const rows = db.query("SELECT * FROM students");
-
-console.log("Alle Students:");
-for (const [id, name, age, email] of rows) {
-  console.log({ id, name, age, email });
-}
-
-db.close();
+stmt.run(555, "aaaa",2345-12-30);
+console.log(rows);
