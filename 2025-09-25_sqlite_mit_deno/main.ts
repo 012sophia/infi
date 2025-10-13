@@ -10,5 +10,7 @@ let stmt = db.prepare("SELECT * FROM students");
 const rows = stmt.all();
 stmt = db.prepare("insert into students(id, name, birthdate) values (?, ?, ?)");
 
-stmt.run(555, "aaaa",2345-12-30);
+stmt.run(555, "aaaa", 2323-12-23);
 console.log(rows);
+//bei select * from students ist * dafür da, dass alles selected wird
+//record ist zeile
