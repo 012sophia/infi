@@ -1,0 +1,30 @@
+1) Who was the first emperor of Rome?
+sqlite> select question, correct_answer_id from question where question like 'Who was the first emperor%'; 
+Who was the first emperor of Rome?|cmfz99ruy0008fklk4qdbxjti
+sqlite> select answer from answer where id = 'cmfz99ruy0008fklk4qdbxjti';                                 
+Augustus
+
+2) Prior to 2018, which car company is the only Japanese company which won the 24 Hours of Le Mans?
+sqlite> select question, correct_answer_id from question where question like 'Prior to 2018, which car com%';
+Prior to 2018, which car company is the only Japanese company which won the 24 Hours of Le Mans?|cmfvalbkv006gfkzig78w9t18
+sqlite> select answer from answer where id = 'cmfvalbkv006gfkzig78w9t18';
+Mazda
+
+3) Why was The Green Monster at Fenway Park was originally built?
+sqlite> select question, correct_answer_id from question where question like 'Why was The Green Monst%';                                       
+Why was The Green Monster at Fenway Park was originally built?|cmfvalfaf00alfkzi8c9r8txa
+sqlite> select answer from answer where id = 'cmfvalfaf00alfkzi8c9r8txa';
+To prevent viewing games from outside the park.
+sqlite>
+
+4) In bowling, what is the term used for getting three consecutive strikes?
+sqlite> select question, correct_answer_id from question where question like 'In bowling, what is%';                                                     
+In bowling, what is the term used for getting three consecutive strikes?|cmfvalj6x00fefkzikkuqczqk
+sqlite> select answer from answer where id = 'cmfvalj6x00fefkzikkuqczqk';
+Turkey
+
+5) Who voices the character &quot;Reigen&quot;  in the English dub of &quot;Mob Psycho 100&quot;?
+sqlite> select question, correct_answer_id from question where question like 'Who voices the character &quot;Reigen%';                                                       
+Who voices the character &quot;Reigen&quot;  in the English dub of &quot;Mob Psycho 100&quot;?|cmfvalspo00qrfkziqg8j9y6i
+sqlite> select answer from answer where id = 'cmfvalspo00qrfkziqg8j9y6i';
+Chris Niosi
