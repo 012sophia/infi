@@ -28,3 +28,11 @@ sqlite> select question, correct_answer_id from question where question like 'Wh
 Who voices the character &quot;Reigen&quot;  in the English dub of &quot;Mob Psycho 100&quot;?|cmfvalspo00qrfkziqg8j9y6i
 sqlite> select answer from answer where id = 'cmfvalspo00qrfkziqg8j9y6i';
 Chris Niosi
+
+sum) summe
+sqlite> select sum(opentdb_id) from category;
+492
+
+avg) average
+sqlite> select avg(opentdb_id) from category;
+20.5
