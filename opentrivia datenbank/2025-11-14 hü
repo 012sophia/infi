@@ -36,3 +36,28 @@ sqlite> select sum(opentdb_id) from category;
 avg) average
 sqlite> select avg(opentdb_id) from category;
 20.5
+
+extras)
+sqlite> select question from question where question like 'Who %' limit 5;
+Who won the 2018 Monaco Grand Prix?
+Who won the 2017 Formula One World Drivers&#039; Championship?
+Who scored the injury time winning goal in the 1999 UEFA Champions League final between Manchester United and Bayern Munich?
+Who won the premier league title in the 2015-2016 season following a fairy tale run?
+Who won the &quot;Champions League&quot; in 1999?
+
+sqlite> select answer from answer where answer like 'The %' limit  5;
+The &quot;Ice Storm&quot; Item
+The 1936 Olympics
+The Academy
+The Adventure Line
+The Amazing World of Gumball
+
+sqlite> select question from question order by random() limit 1;
+Where was the Sniper character in Team Fortress 2 born?
+
+sqlite> select distinct question from question limit 2;
+How many scoring zones are there on a conventional dart board?
+How many premier league trophies did Sir Alex Ferguson win during his time at Manchester United?
+
+sqlite> select count(question) from question;
+4741
