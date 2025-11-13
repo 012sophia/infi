@@ -37,7 +37,7 @@ avg) average
 sqlite> select avg(opentdb_id) from category;
 20.5
 
-extras)
+extras weil ich nichts besseres zu tun habe)
 sqlite> select question from question where question like 'Who %' limit 5;
 Who won the 2018 Monaco Grand Prix?
 Who won the 2017 Formula One World Drivers&#039; Championship?
