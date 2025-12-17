@@ -1,0 +1,1 @@
+select distinct count(firstname) from persons where sex = 'male';

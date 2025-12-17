@@ -1,0 +1,1 @@
+select email from persons where firstname = 'Carla' and lastname ='Voigt';
