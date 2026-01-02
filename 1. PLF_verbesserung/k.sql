@@ -1,0 +1,1 @@
+select a.id from numbers a join numbers b on a.id+2 = b.id where a.id between 500 and 600;

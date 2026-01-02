@@ -1,0 +1,1 @@
+select count(contactname) as anzahl from customers where contactname like '%tt%';

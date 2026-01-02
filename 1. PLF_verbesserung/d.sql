@@ -1,0 +1,1 @@
+select count(orderdate) as ordersfrom1997 from orders where orderdate >= '1997%';

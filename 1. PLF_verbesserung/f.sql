@@ -1,0 +1,1 @@
+select city from (select distinct city from customers order by city desc limit 5) order by city asc;

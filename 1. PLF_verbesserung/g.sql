@@ -1,0 +1,1 @@
+select country from customers group by country order by count() desc limit 3;

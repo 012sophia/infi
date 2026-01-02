@@ -1,0 +1,1 @@
+select contactname from customers  where contactname like '%tt%' order by contactname desc;
