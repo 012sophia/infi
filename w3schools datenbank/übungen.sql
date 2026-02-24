@@ -8,3 +8,11 @@ die mindestens eine Bestellung aufgegeben haben.
 Sortierung: CustomerName alphabetisch aufsteigend.
 select distinct c.customerid ,c.customername from customers c join orders o on c.customerid=o.customerid order by c.customernam
 e; 
+
+INNER JOIN → nur wenn beide Seiten vorhanden sein müssen
+
+LEFT JOIN → wenn linke Tabelle vollständig angezeigt werden soll
+
+RIGHT JOIN → selten, nur wenn rechte Tabelle vollständig
+
+FULL OUTER JOIN → wenn alle Datensätze beider Tabellen angezeigt werden sollen
