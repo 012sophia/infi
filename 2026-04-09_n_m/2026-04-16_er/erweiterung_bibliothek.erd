@@ -1,0 +1,39 @@
+
+//1. Buch -> Exemplar: 1:n (One-to-Many)
+//2. Mitarbeiter -> Exemplar: n:m (Many-to-Many) für "leiht aus"
+//3. Mitarbeiter -> Exemplar: n:m (Many-to-Many) für "nimmt zurück"
+erdiagram Bibliothek
+
+notation=crowsfoot
+
+entity Buch {
+   isbn key
+   titel
+   autor
+   verlag
+}
+
+entity Exemplar {
+   exemplar_id key
+   physisches_exemplar
+   standort
+   status
+   isbn fk
+}
+
+entity Mitarbeiter {
+   mitarbeiter_id key
+   name
+}
+
+relationship hat {
+   Buch [1] -> Exemplar [0..N]
+}
+
+relationship leiht_aus {
+   Mitarbeiter [0..N] -> Exemplar [0..N]
+}
+
+relationship nimmt_zurueck {
+   Mitarbeiter [0..N] -> Exemplar [0..N]
+}
