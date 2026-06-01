@@ -14,3 +14,10 @@ VALUES ('Alice', 'alice@mail.com', 'Germany');
 code kann anonym oder nicht anonym geschrieben werden, man benutzt beides,kommt darauf an was man macht(öfter aufrufen oder nicht)
 °objekt von unterobjekt mit punkten getrennt
 °in promise nur 1 mal promise mit 1 rejekt,resolve, sie die antwort 1 mal an then weiter gibt
+
+zwischentabelle:
+create table if npt exist "_ab"(a text not null, b not null, consztraint "_sb_s_fk" references "awnser" ("id") on delete ecascade on updat cascade ...);
+
+oder on delete restrict
+
+transaction
