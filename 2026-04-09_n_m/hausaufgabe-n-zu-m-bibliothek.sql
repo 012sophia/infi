@@ -188,11 +188,11 @@ INSERT INTO ausleihe (leser_id, buch_id, ausleih_datum, rueckgabe_datum, anzahl_
 --
 -- DEIN CODE HIER:
 
-SELECT l.name, b.titel, a.anzahl_tage
+SELECT l.name, b.titel, a.ausleih_datum, a.anzahl_tage
 FROM leser l 
 JOIN ausleihe a ON l.id = a.leser_id
 JOIN buch b ON b.id = a.buch_id 
-ORDER BY a.ausleih_datum ASC;
+ORDER BY a.ausleih_datum DESC;
 
 SELECT b.titel, l.name, a.anzahl_tage
 FROM leser l 
@@ -202,11 +202,13 @@ WHERE a.rueckgabe_datum IS NULL;
 
 SELECT b.titel, COUNT(a.buch_id) AS anzahl_ausleihen
 FROM buch b
-JOIN ausleihe a ON b.id = a.buch_id;
+JOIN ausleihe a ON b.id = a.buch_id
+GROUP BY b.id, b.titel
+ORDER BY anzahl_ausleihen DESC;
 
 SELECT l.name, COUNT(a.leser_id) AS anzahl_ausleihen
 FROM leser l
-JOIN ausleihe a ON l.id = a.leser_id,
+JOIN ausleihe a ON l.id = a.leser_id
 GROUP BY l.name
 ORDER BY anzahl_ausleihen DESC
 LIMIT 1;
@@ -219,7 +221,12 @@ LIMIT 1;
 --
 -- DEIN CODE HIER:
 
-
+CREATE VIEW aktuelle_ausleihen AS
+SELECT l.name AS lesername, b.titel AS buchtitel, a.ausleih_datum
+FROM leser l
+JOIN ausleihe a ON l.id = a.leser_id
+JOIN buch b ON b.id = a.buch_id
+WHERE a.rueckgabe_datum IS NULL;
 
 -- ============================================================================
 -- BEWERTUNGSKRITERIEN:

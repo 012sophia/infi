@@ -1,1 +1,1 @@
-select id from persons where birthdate >= '2000%' order by birthdate asc;
+select id from persons where birthdate like '2000%' order by birthdate desc;

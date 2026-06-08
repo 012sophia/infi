@@ -1,16 +1,15 @@
-//sync adapter für sqlite
 import { DatabaseSync } from "node:sqlite";
 
-//konkreter "handle" für eine spezifische datenbank
 const db = new DatabaseSync("2ahwii.db");
 
-//statement wird zuerst "prepared" und dann "executed"
-let stmt = db.prepare("SELECT * FROM students");
-//hier das execute:
-const rows = stmt.all();
-stmt = db.prepare("insert into students(id, name, birthdate) values (?, ?, ?)");
+db.exec("CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT NOT NULL, birthdate TEXT)");
 
-stmt.run(33, "qrqwer", "2323-12-23");
+const insertStmt = db.prepare("INSERT INTO students (id, name, birthdate) VALUES (?, ?, ?)");
+insertStmt.run(1, "Sophia", "2008-05-12");
+insertStmt.run(2, "Max", "2007-11-03");
+insertStmt.run(3, "Anna", "2008-02-28");
+
+const selectStmt = db.prepare("SELECT * FROM students");
+const rows = selectStmt.all();
+console.log("Alle Schüler:");
 console.log(rows);
-//bei select * from students ist * dafür da, dass alles selected wird
-//record ist zeile
