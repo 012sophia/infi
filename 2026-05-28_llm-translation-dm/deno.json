@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@prisma/client": "npm:@prisma/client@^6.19.3",
+    "prisma": "npm:prisma@^6.19.3"
+  }
+}
